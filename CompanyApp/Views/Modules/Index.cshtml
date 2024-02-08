@@ -1,0 +1,96 @@
+﻿@model IEnumerable<CompanyApp.Models.Module>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    body {
+        background-color: #f2f2f2;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #f3f3f3;
+    }
+
+    th {
+        background-color: #8a2be2;
+        color: rgba(164,96,255,0.37);
+    }
+
+    tr:hover {
+        background-color: #f2f2f2; 
+    }
+
+    a {
+        color: #8a2be2;
+    }
+
+        a:hover {
+            text-decoration: none;
+            color: #5d1aae;
+        }
+</style>
+
+<h1>My Modules</h1>
+
+<p>
+    <a asp-action="Create" style="color: #fff; background-color: #8a2be2; padding: 8px 16px; border-radius: 4px; text-decoration: none;">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desctription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>Completed</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-controller="Modules" asp-action="ShowModuleQuestions" asp-route-moduleId="@item.Id">@item.Name</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desctription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td>
+                    @ViewBag.Completed.Contains(item.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Create" asp-controller="Questions" asp-route-moduleId="@item.Id">Add question</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

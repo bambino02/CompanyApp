@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Question>
+
+<h2 class="d-flex justify-content-center" style="font-weight: bold; margin-bottom:10px;">Модуль: @ViewBag.Module.Name</h2>
+<h2 class="d-flex justify-content-center" style="font-weight: bold; margin-bottom:10px;">@ViewBag.Module.Desctription</h2>
+
+<table>
+    <tbody id="Users">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    <label>@item.Description</label>
+                    <div>
+                        <input type="radio" id="Yes_@item.Id" name="@item.Id" value="@item.Answer" /> Yes
+                        <input type="radio" id="No_@item.Id" name="@item.Id" value="@item.Answer" /> No
+                    </div>
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-warning" onclick="SelectList(@ViewBag.Module.Id)">Submit</a>
+</div>
+<br />
+<div id="textField" style="display: none;">
+    This is the text that appears when you click the submit button.
+</div>
+
+<script>
+    function SelectList(moduleId) {
+        var commaSeparatedIds = "";
+        var totalCount = 0;
+        var correctAnswers = 0;
+        $("#Users tr input[type=radio]").each(function (index, val) {
+            debugger
+            totalCount++;
+            var checkId = $(val).attr("Id");
+            var correctAnswer = $(val).attr("Value");
+            var arr = checkId.split('_');
+
+            var IsChecked = $("#" + checkId).is(":checked", true);
+            if (IsChecked) {
+                if (arr[0] == correctAnswer) {
+                    correctAnswers++;
+                }
+            }
+        })
+
+        DisableAllCheckboxes();
+        var result = CountResult(totalCount / 2, correctAnswers);
+
+        if (result >= 70) {
+            $.ajax({
+                async: true,
+                url: "/Modules/ShowModuleQuestions",
+                type: "POST",
+                data: { ModuleId: moduleId, Completed: "True" }
+            })
+        }
+        else{
+            $.ajax({
+                async: true,
+                url: "/Modules/ShowModuleQuestions",
+                type: "POST",
+                data: { ModuleId: moduleId, Completed: "False" }
+            })
+        }
+    }
+
+    function CountResult(totalCount, correctAnswers) {
+        var result = Math.floor((correctAnswers / totalCount) * 100);
+        var text = document.getElementById("textField");
+        if (result >= 70) {
+            text.innerHTML = "You passed. Your result: " + result + "%";
+        }
+        else {
+            text.innerHTML = "You failed. your result: " + result + "%";
+        }
+        text.style.display = "block";
+        return result;
+    }
+
+    function DisableAllCheckboxes() {
+        for (var inp = document.getElementsByTagName('input'), chb = [], j = 0, J = inp.length; j < J; j++) {
+            if (inp[j].type == 'radio') {
+                inp[j].disabled = 1;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,135 @@
+﻿@model IEnumerable<CompanyApp.Models.Event>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        h1 {
+            color: #673ab7;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #673ab7;
+            color: #fff;
+        }
+
+        td:hover {
+            color: #512da8;
+        }
+
+
+        td {
+            background-color: #f9f9f9;
+        }
+
+            td:hover {
+                color: #512da8;
+            }
+
+        a {
+            color: #673ab7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+            a:hover {
+                color: #512da8;
+            }
+
+        .btn {
+            background-color: #e1bee7;
+            color: #673ab7;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            .btn:hover {
+                background-color: #d1c4e9;
+                color: #512da8;
+            }
+
+        .event:hover {
+            background-color: #e1bee7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming Events</h1>
+        <p>
+            <a asp-action="Create" class="btn">Create New</a>
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.Type)</th>
+                    <th>@Html.DisplayNameFor(model => model.HeldDate)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="event">
+                        <td style="background-color: #fff;">@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Type)</td>
+                        <td>@Html.DisplayFor(modelItem => item.HeldDate)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn">Details</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
