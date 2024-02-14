@@ -6,9 +6,9 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.CompanyApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CompanyApp/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CompanyApp/Views/Home/Index.cshtml">
     <Files>
-      <File FileName="CompanyApp/Program.cs" Line="10" Column="21" />
+      <File FileName="CompanyApp/Program.cs" Line="10" Column="45" />
       <File FileName="CompanyApp/Properties/launchSettings.json" />
       <File FileName="CompanyApp/Properties/serviceDependencies.json" />
       <File FileName="CompanyApp/Properties/serviceDependencies.local.json" />
@@ -17,17 +17,26 @@
       <File FileName="CompanyApp/Data/Migrations/20230626123758_UpdateModuleUser.cs" Line="1" Column="1" />
       <File FileName="CompanyApp/Data/ApplicationDbContext.cs" Line="1" Column="1" />
       <File FileName="CompanyApp/Data/Migrations/20230626203700_UpdateRelation.cs" Line="1" Column="1" />
+      <File FileName="CompanyApp/Views/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="CompanyApp/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="CompanyApp/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="CompanyApp/Views/Shared/_LoginPartial.cshtml" Line="1" Column="1" />
+      <File FileName="CompanyApp/Views/Home/Index.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CompanyApp" expanded="True">
-            <Node name="CompanyApp" selected="True">
+            <Node name="CompanyApp" expanded="True">
               <Node name="Dependencies" expanded="True" />
               <Node name="Data" expanded="True">
                 <Node name="Migrations" expanded="True" />
               </Node>
               <Node name="Properties" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
