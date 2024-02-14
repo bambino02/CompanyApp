@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{6AAF2875-976F-43F6-A6D2-21F1E5BFDE04}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.CompanyApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CompanyApp/Program.cs">
+    <Files>
+      <File FileName="CompanyApp/Program.cs" Line="10" Column="21" />
+      <File FileName="CompanyApp/Properties/launchSettings.json" />
+      <File FileName="CompanyApp/Properties/serviceDependencies.json" />
+      <File FileName="CompanyApp/Properties/serviceDependencies.local.json" />
+      <File FileName="CompanyApp/appsettings.json" Line="14" Column="2" />
+      <File FileName="CompanyApp/Data/Migrations/20230626122811_InitialCreate.cs" Line="1" Column="1" />
+      <File FileName="CompanyApp/Data/Migrations/20230626123758_UpdateModuleUser.cs" Line="1" Column="1" />
+      <File FileName="CompanyApp/Data/ApplicationDbContext.cs" Line="1" Column="1" />
+      <File FileName="CompanyApp/Data/Migrations/20230626203700_UpdateRelation.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CompanyApp" expanded="True">
+            <Node name="CompanyApp" selected="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Data" expanded="True">
+                <Node name="Migrations" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

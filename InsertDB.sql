@@ -32,11 +32,11 @@ SELECT * from Modules;
 
 
 --PROJETS
---IDENTITY_INSERT Projects ON;
+-- SET IDENTITY_INSERT Projects ON;
 insert into Projects (id, Name, GeneralInfo, Customer) 
-VALUES (1, 'LSEG MDST', 'LSEG is a leading global financial markets infrastructure and data provider. We play a vital social and economic role in the world’s financial system. This project is created to develop and support cloud architecture in AWS', 'LSEG');
+VALUES (1, 'LSEG MDST', 'LSEG is a leading global financial markets infrastructure and data provider. We play a vital social and economic role in the worldï¿½s financial system. This project is created to develop and support cloud architecture in AWS', 'LSEG');
 insert into Projects (id, Name, GeneralInfo, Customer) 
-VALUES (2, 'LSEG DB', 'LSEG is a leading global financial markets infrastructure and data provider. We play a vital social and economic role in the world’s financial system. This project is associated with data transfer and databese of applications, in company.', 'LSEG');
+VALUES (2, 'LSEG DB', 'LSEG is a leading global financial markets infrastructure and data provider. We play a vital social and economic role in the worldï¿½s financial system. This project is associated with data transfer and databese of applications, in company.', 'LSEG');
 insert into Projects (id, Name, GeneralInfo, Customer) 
 VALUES (3, 'UBS G', 'UBS is a global firm providing financial services in over 50 countries. Main goal of yhe project is to maintain Android applications on Java 11 and support JUnit testing as well as H2 database', 'UBS');
 insert into Projects (id, Name, GeneralInfo, Customer) 
